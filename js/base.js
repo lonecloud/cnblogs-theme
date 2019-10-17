@@ -42,7 +42,12 @@ function Base() {
 		// Loading后初始化
 		bndongJs.loadingAfterInit();
 	}catch(e){
-	     location.reload();
+	     //判断页面是否有该标签
+	     if(!document.getElementById('menuWrap')){
+		  location.reload();
+	     }else{
+	     	console.log(e);
+	     }
 	}
     };
 
