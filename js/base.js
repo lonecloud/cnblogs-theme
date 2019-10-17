@@ -32,15 +32,18 @@ function Base() {
      * 初始化
      */
     this.init = function () {
+	try{
+		// Loading前初始化
+		bndongJs.loadingBeforeInit();
 
-        // Loading前初始化
-        bndongJs.loadingBeforeInit();
+		// Loading结束
+		bndongJs.endLoading();
 
-        // Loading结束
-        bndongJs.endLoading();
-
-        // Loading后初始化
-        bndongJs.loadingAfterInit();
+		// Loading后初始化
+		bndongJs.loadingAfterInit();
+	}catch(e){
+	     location.reload();
+	}
     };
 
     /**
